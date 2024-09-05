@@ -87,7 +87,7 @@ def check_voting_eligibility():
       if age == 'quit':
         print('leaving')
         break
-      elif int(age) <= 0 :
+      elif not age.isdigit() or int(age) <= 0:
         print('submit valid age')
       else:
         if int(age) < 18 :
@@ -96,5 +96,5 @@ def check_voting_eligibility():
           print('you are eligible to vote')
 
 # Call the function
-#check_voting_eligibility()
+# check_voting_eligibility()
 
