@@ -19,6 +19,11 @@ def print_greeting():
 # Call the function
 # print_greeting()
 
+
+
+
+
+
 # Exercise 1: Vowel or Consonant
 #
 # Write a Python function named `check_letter` that determines if a given letter
@@ -55,6 +60,10 @@ def check_letter():
 # Call the function
 # check_letter()
 
+
+
+
+
 # Exercise 2: Old enough to vote?
 #
 # Write a Python function named `check_voting_eligibility` that determines if a user is old enough to vote.
@@ -73,7 +82,19 @@ def check_letter():
 
 def check_voting_eligibility():
     # Your control flow logic goes here
+    while True:
+      age = input('Input your age: ')
+      if age == 'quit':
+        print('leaving')
+        break
+      elif int(age) <= 0 :
+        print('submit valid age')
+      else:
+        if int(age) < 18 :
+          print('you are not old enough to vote')
+        elif int(age) >= 18 :
+          print('you are eligible to vote')
 
 # Call the function
-check_voting_eligibility()
+#check_voting_eligibility()
 
