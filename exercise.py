@@ -139,4 +139,109 @@ def calculate_dog_years():
     
 
 # Call the function
-calculate_dog_years()
+# calculate_dog_years()
+
+
+
+# Exercise 4: Weather Advice
+#
+# Write a Python script named `weather_advice` that provides clothing advice based on weather conditions.
+#
+# Requirements:
+# - The script should prompt the user to enter if it is cold (yes/no).
+# - Then, ask if it is raining (yes/no).
+# - Use logical operators to determine clothing advice:
+#   - If it is cold AND raining, print "Wear a waterproof coat."
+#   - If it is cold BUT NOT raining, print "Wear a warm coat."
+#   - If it is NOT cold but raining, print "Carry an umbrella."
+#   - If it is NOT cold AND NOT raining, print "Wear light clothing."
+#
+# Hints:
+# - Use logical operators (`AND`, `OR`, `NOT`) in your if statements to handle multiple conditions.
+
+def weather_advice():
+    while True:
+      # Your control flow logic goes here
+      is_it_cold = input('Is It Cold (Y/N): '.lower())
+      
+      if is_it_cold == 'quit':
+        print('Leaving')
+        break
+      elif is_it_cold not in ['y', 'n']:
+        print('Please select Y or N')
+        continue
+      
+      if is_it_cold :
+        is_it_raining = input('Is It Raining (Y/N): '.lower())
+        if is_it_raining == 'quit':
+          print('Leaving')
+          break
+        elif is_it_raining not in ['y', 'n']:
+          print('Please select Y or N')
+          continue
+        if is_it_cold == is_it_raining== 'y':
+          print('Wear a waterproof coat.')
+        elif is_it_cold == 'y' and is_it_raining== 'n':
+          print('Wear a warm coat.')
+        elif is_it_cold == 'n' and is_it_raining== 'y':
+          print('Carry an umbrella.') 
+        elif is_it_cold == is_it_raining== 'n':
+          print('Wear light clothing.') 
+
+# Call the function
+# weather_advice()
+
+
+
+# Exercise 5: What's the Season?
+#
+# Write a Python function named `determine_season` that figures out the season based on the entered date.
+#
+# Requirements:
+# - The function should first prompt the user to enter the month (as three characters): "Enter the month of the year (Jan - Dec):"
+# - Then, the function should prompt the user to enter the day of the month: "Enter the day of the month:"
+# - Determine the current season based on the date:
+#      - Dec 21 - Mar 19: Winter
+#      - Mar 20 - Jun 20: Spring
+#      - Jun 21 - Sep 21: Summer
+#      - Sep 22 - Dec 20: Fall
+# - Print the season for the entered date in the format: "<Mmm> <dd> is in <season>."
+#
+# Hints:
+# - Use 'in' to check if a string is in a list or tuple.
+# - Adjust the season based on the day of the month when needed.
+# - Ensure to validate input formats and handle unexpected inputs gracefully.
+
+def determine_season():
+  while True:
+    # Your control flow logic goes here
+    month = input('Enter the month of the year (Jan-Dec) 3 character max: ').lower()
+    months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
+    if month in months :
+      day = input('Enter the day of the month (1-31): ')
+      if day == 'quit':
+        print('Leaving')
+        break
+      elif not day.isdigit():
+        print('Enter a numerical value')
+      elif int(day) > 31:
+        print('Enter a value between 1-31')
+        continue
+      if (month == 'dec' and int(day) >20) or month in ['jan', 'feb'] or (month == 'mar' and int(day) <=19):
+        season = 'winter'
+      elif(month == 'mar' and int(day) > 19) or month in ['apr', 'may'] or (month == 'jun' and int(day) <=20):
+        season = 'spring'
+      elif(month =='jun' and int(day) >20) or month in ['jul', 'aug'] or (month == 'sep' and int(day) <=21) :
+        season = 'summer'
+      elif(month=='sep' and int(day) >21) or month in ['oct', 'nov'] or (month == 'dec' and int(day) <=20) :
+        season = 'fall'
+      print(f'{month.capitalize()} {day} is in {season}')
+    elif month == 'quit':
+      print('Leaving')
+      break
+    else:
+      print('enter valid month with 3 characters')
+      continue
+
+# Call the function
+determine_season()
